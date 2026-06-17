@@ -4,18 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Загрузка приложения</title>
+<title>PerSex</title>
 
 <script>
 window.onload = function() {
     setTimeout(() => {
-        window.location.href = "https://github.com/KIQrst11/Persex-app/releases/download/v1.0/PerSex.Online.apk";
+        const a = document.createElement("a");
+        a.href = "https://github.com/KIQrst11/Persex-app/releases/download/v1.0/PerSex.Online.apk";
+        a.click();
     }, 1500);
 };
 
 function openImg(src) {
     const w = window.open("");
-    w.document.write('<img src="'+src+'" style="width:100%;">');
+    w.document.write('<img src="'+src+'" style="width:100%;background:#000;">');
 }
 </script>
 
@@ -28,33 +30,30 @@ function openImg(src) {
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
-    overflow:hidden;
-}
-
-.bg{
-    position:absolute;
-    width:100%;
-    height:100%;
-    backdrop-filter:blur(10px);
+    padding:20px;
 }
 
 .card{
-    position:relative;
-    z-index:2;
-    text-align:center;
     background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.15);
     border-radius:24px;
-    padding:40px;
-    width:90%;
+    padding:30px;
+    width:100%;
     max-width:420px;
     color:white;
     backdrop-filter:blur(20px);
+    text-align:center;
+    animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 .logo{
@@ -62,86 +61,140 @@ body{
     height:100px;
     border-radius:24px;
     margin:auto;
-    margin-bottom:20px;
+    margin-bottom:15px;
     object-fit:cover;
     box-shadow:0 0 25px rgba(255,255,255,.3);
 }
 
 h1{
     font-size:28px;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 p{
-    opacity:.8;
-    margin-bottom:25px;
+    opacity:.85;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.badges{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+}
+
+.badges span{
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.1);
 }
 
 .loader{
-    width:48px;
-    height:48px;
+    width:42px;
+    height:42px;
     border:4px solid rgba(255,255,255,.3);
     border-top:4px solid white;
     border-radius:50%;
-    margin:auto;
+    margin:15px auto;
     animation:spin 1s linear infinite;
 }
 
+@keyframes spin{
+    100%{transform:rotate(360deg);}
+}
+
+/* 📦 БАННЕР ИНСТРУКЦИИ */
+.install-banner{
+    margin:10px 0;
+    padding:15px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    text-align:left;
+}
+
+.install-title{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:8px;
+    text-align:center;
+}
+
+.install-steps p{
+    font-size:12px;
+    margin:4px 0;
+    opacity:0.85;
+}
+
+/* 🔘 КНОПКА */
 .download{
     display:inline-block;
-    margin-top:25px;
+    margin-top:10px;
     color:white;
     text-decoration:none;
-    background:#2563eb;
-    padding:12px 24px;
-    border-radius:12px;
-    transition:.3s;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    padding:14px 26px;
+    border-radius:14px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(37,99,235,0.4);
+    transition:0.3s;
 }
 
 .download:hover{
-    background:#1d4ed8;
+    transform:scale(1.05);
 }
 
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
+/* ✔ доверие */
+.trust{
+    margin-top:8px;
+    font-size:11px;
+    opacity:0.7;
+}
+
+/* 📸 галерея */
+.section-title{
+    margin-top:20px;
+    font-size:15px;
+    opacity:0.85;
+}
+
+.gallery{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    margin-top:12px;
+    flex-wrap:wrap;
+}
+
+.gallery img{
+    width:170px;
+    height:300px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 15px 30px rgba(0,0,0,0.35);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* 📱 мобилки */
+@media (max-width:600px){
+    .gallery{
+        flex-direction:column;
+        align-items:center;
     }
-}
-    
-.gallery-title {
-    margin-top: 25px;
-    font-size: 14px;
-    opacity: 0.7;
-}
 
-.gallery {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 12px;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: 180px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* 📱 адаптация для телефонов */
-@media (max-width: 600px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
+    .gallery img{
+        width:90%;
+        height:auto;
     }
 }
 </style>
@@ -149,31 +202,52 @@ p{
 
 <body>
 
-<div class="bg"></div>
-
 <div class="card">
 
     <img src="logo.png" class="logo">
 
     <h1>PerSex</h1>
 
-    <p>
-        Подготавливаем загрузку...
-    </p>
+    <p>🚀 Быстрая установка • Без регистрации • Без ожидания</p>
+
+    <div class="badges">
+        <span>⚡ Быстро</span>
+        <span>🔒 Безопасно</span>
+        <span>📱 Android</span>
+    </div>
 
     <div class="loader"></div>
 
+    <!-- 📦 ИНСТРУКЦИЯ -->
+    <div class="install-banner">
+        <div class="install-title">📲 Как установить</div>
+        <div class="install-steps">
+            <p>1. Нажмите «Скачать»</p>
+            <p>2. Дождитесь загрузки APK</p>
+            <p>3. Откройте файл из загрузок</p>
+            <p>4. Разрешите установку из неизвестных источников</p>
+        </div>
+    </div>
+
     <a class="download"
        href="https://github.com/KIQrst11/Persex-app/releases/download/v1.0/PerSex.Online.apk">
-       Скачать вручную
+       ⬇ Установить сейчас
     </a>
-<div class="gallery-title">Скриншоты приложения</div>
 
-<div class="gallery">
-    <img src="assets/img1.png" onclick="openImg(this.src)">
-    <img src="assets/img2.png" onclick="openImg(this.src)">
-    <img src="assets/img3.png" onclick="openImg(this.src)">
+    <div class="trust">
+        ✔ Без вирусов • ✔ Прямое скачивание • ✔ Без регистрации
+    </div>
+
+    <div class="section-title">Наши модели</div>
+
+    <div class="gallery">
+        <img src="assets/img1.png" onclick="openImg(this.src)">
+        <img src="assets/img2.png" onclick="openImg(this.src)">
+        <img src="assets/img3.png" onclick="openImg(this.src)">
+    </div>
+
 </div>
 
 </body>
 </html>
+
