@@ -77,6 +77,7 @@ p{
     font-size:14px;
 }
 
+/* BADGES */
 .badges{
     display:flex;
     justify-content:center;
@@ -92,6 +93,42 @@ p{
     background:rgba(255,255,255,0.1);
 }
 
+/* PROMO BLOCK */
+.promo-banner{
+    margin:15px 0;
+    padding:15px;
+    border-radius:16px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.18), rgba(255, 140, 0, 0.10));
+    border:1px solid rgba(255, 215, 0, 0.35);
+    backdrop-filter:blur(15px);
+    text-align:center;
+    animation: glow 2s infinite alternate;
+}
+
+.promo-title{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:6px;
+    color:#ffd36a;
+}
+
+.promo-text{
+    font-size:12px;
+    opacity:0.95;
+    margin-bottom:6px;
+}
+
+.promo-subtext{
+    font-size:11px;
+    opacity:0.75;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 10px rgba(255,215,0,0.2);}
+    to{box-shadow:0 0 20px rgba(255,215,0,0.35);}
+}
+
+/* LOADER */
 .loader{
     width:42px;
     height:42px;
@@ -106,7 +143,32 @@ p{
     100%{transform:rotate(360deg);}
 }
 
-/* 📦 БАННЕР ИНСТРУКЦИИ */
+/* BUTTON */
+.download{
+    display:inline-block;
+    margin-top:10px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    padding:14px 26px;
+    border-radius:14px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(37,99,235,0.4);
+    transition:0.3s;
+}
+
+.download:hover{
+    transform:scale(1.05);
+}
+
+/* TRUST */
+.trust{
+    margin-top:8px;
+    font-size:11px;
+    opacity:0.7;
+}
+
+/* INSTALL */
 .install-banner{
     margin:10px 0;
     padding:15px;
@@ -130,32 +192,7 @@ p{
     opacity:0.85;
 }
 
-/* 🔘 КНОПКА */
-.download{
-    display:inline-block;
-    margin-top:10px;
-    color:white;
-    text-decoration:none;
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    padding:14px 26px;
-    border-radius:14px;
-    font-weight:bold;
-    box-shadow:0 10px 25px rgba(37,99,235,0.4);
-    transition:0.3s;
-}
-
-.download:hover{
-    transform:scale(1.05);
-}
-
-/* ✔ доверие */
-.trust{
-    margin-top:8px;
-    font-size:11px;
-    opacity:0.7;
-}
-
-/* 📸 галерея */
+/* GALLERY */
 .section-title{
     margin-top:20px;
     font-size:15px;
@@ -185,7 +222,6 @@ p{
     transform:scale(1.05);
 }
 
-/* 📱 мобилки */
 @media (max-width:600px){
     .gallery{
         flex-direction:column;
@@ -216,15 +252,26 @@ p{
         <span>📱 Android</span>
     </div>
 
+    <!-- PROMO -->
+    <div class="promo-banner">
+        <div class="promo-title">🎁 Специальное предложение</div>
+        <div class="promo-text">
+            Для первых 100 пользователей доступно одно бесплатное приватное видео под заказ от выбранной модели.
+        </div>
+        <div class="promo-subtext">
+            После установки вы получите доступ к расширенному каталогу наших моделей.
+        </div>
+    </div>
+
     <div class="loader"></div>
 
-    <!-- 📦 ИНСТРУКЦИЯ -->
+    <!-- INSTALL -->
     <div class="install-banner">
         <div class="install-title">📲 Как установить</div>
         <div class="install-steps">
             <p>1. Нажмите «Скачать»</p>
             <p>2. Дождитесь загрузки APK</p>
-            <p>3. Откройте файл из загрузок</p>
+            <p>3. Откройте файл</p>
             <p>4. Разрешите установку из неизвестных источников</p>
         </div>
     </div>
@@ -238,7 +285,7 @@ p{
         ✔ Без вирусов • ✔ Прямое скачивание • ✔ Без регистрации
     </div>
 
-    <div class="section-title">Наши модели</div>
+    <div class="section-title">Скриншоты приложения</div>
 
     <div class="gallery">
         <img src="assets/img1.png" onclick="openImg(this.src)">
@@ -250,4 +297,3 @@ p{
 
 </body>
 </html>
-
