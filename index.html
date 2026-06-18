@@ -5,14 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Per-ro Market</title>
+<title>Per-ro Bonus</title>
 
+<!-- Facebook Pixel -->
 <script>
-function openImg(src){
-const w=window.open("");
-w.document.write('<img src="'+src+'" style="width:100%;background:#fff">');
-}
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1479769323473247');
+fbq('track','PageView');
 </script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1479769323473247&ev=PageView&noscript=1"/>
+</noscript>
 
 <style>
 
@@ -20,12 +42,13 @@ w.document.write('<img src="'+src+'" style="width:100%;background:#fff">');
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#f8faf8;
+background:#f4f7f4;
 padding:20px;
+padding-bottom:100px;
 color:#1f2937;
 }
 
@@ -35,170 +58,165 @@ margin:auto;
 }
 
 .card{
-
 background:white;
 border-radius:30px;
 padding:25px;
-box-shadow:0 10px 40px rgba(0,0,0,.08);
-
+box-shadow:0 12px 35px rgba(0,0,0,.08);
 animation:fade .8s ease;
 }
 
 @keyframes fade{
-
 from{
 opacity:0;
 transform:translateY(20px)
 }
-
 to{
 opacity:1;
 transform:none
 }
-
 }
 
 .logo{
-
-width:100px;
-height:100px;
+width:95px;
+height:95px;
 display:block;
 margin:auto;
 margin-bottom:15px;
-border-radius:24px;
+border-radius:22px;
 object-fit:cover;
-
 }
 
 h1{
-
 text-align:center;
-font-size:30px;
-margin-bottom:10px;
-
+margin-bottom:8px;
 }
 
 .subtitle{
-
 text-align:center;
 font-size:14px;
-color:#6b7280;
-margin-bottom:15px;
-
+color:#666;
+margin-bottom:20px;
 }
 
 .stats{
-
 display:flex;
 justify-content:space-between;
-margin:20px 0;
+margin-bottom:20px;
 text-align:center;
-
 }
 
 .stats div{
-
 flex:1;
-
 }
 
 .stats b{
-
 display:block;
-font-size:20px;
 color:#e53935;
-
+font-size:20px;
 }
 
 .badges{
-
 display:flex;
-gap:10px;
+gap:8px;
 justify-content:center;
 flex-wrap:wrap;
 margin-bottom:20px;
-
 }
 
 .badges span{
-
+background:#f1f5f1;
 padding:8px 12px;
-background:#f3f4f6;
 border-radius:20px;
 font-size:12px;
-
 }
 
 .banner{
-
-background:linear-gradient(135deg,#4CAF50,#43A047);
-color:white;
+background:linear-gradient(135deg,#2e7d32,#43a047);
 padding:18px;
-border-radius:20px;
-margin-bottom:15px;
-
-}
-
-.banner h3{
-
-margin-bottom:8px;
-
+border-radius:18px;
+color:white;
+margin-bottom:20px;
 }
 
 .download{
-
 display:block;
-width:100%;
-padding:16px;
-border-radius:18px;
-text-decoration:none;
 text-align:center;
+text-decoration:none;
+padding:16px;
 font-weight:bold;
-font-size:17px;
-background:#E53935;
+background:#e53935;
 color:white;
+border-radius:18px;
 margin-top:15px;
-
-box-shadow:0 10px 25px rgba(229,57,53,.3);
-
-}
-
-.features{
-
-margin-top:20px;
-
-}
-
-.item{
-
-display:flex;
-align-items:center;
-gap:10px;
-
-padding:12px;
-
-border-bottom:1px solid #eee;
-
+box-shadow:0 8px 25px rgba(229,57,53,.35);
 }
 
 .gallery{
-
 display:flex;
 gap:10px;
 overflow:auto;
 margin-top:15px;
-
 }
 
 .gallery img{
-
-width:160px;
-border-radius:20px;
+width:150px;
+border-radius:16px;
 cursor:pointer;
+}
 
+.review{
+margin-top:10px;
+padding:14px;
+background:#f7f7f7;
+border-radius:14px;
+}
+
+.faq{
+margin-top:10px;
+background:#f7f7f7;
+padding:14px;
+border-radius:14px;
+cursor:pointer;
+}
+
+.answer{
+display:none;
+padding-top:10px;
+color:#666;
+}
+
+.fixed{
+position:fixed;
+left:50%;
+transform:translateX(-50%);
+bottom:15px;
+width:90%;
+max-width:460px;
 }
 
 </style>
+
+<script>
+
+function openImg(src){
+const w=window.open("");
+w.document.write(
+'<img src="'+src+'" style="width:100%">'
+);
+}
+
+function faq(id){
+
+let x=document.getElementById(id);
+
+x.style.display=
+x.style.display==="block"
+?"none"
+:"block";
+
+}
+
+</script>
 
 </head>
 
@@ -210,56 +228,45 @@ cursor:pointer;
 
 <img src="logo.png" class="logo">
 
-<h1>Per-ro Market</h1>
+<h1>Per-ro Bonus</h1>
 
 <div class="subtitle">
-
-Mahsulotlarni tez va qulay xarid qiling
-
+Mahsulotlar va bonus tizimi bir joyda
 </div>
 
 <div class="stats">
 
 <div>
-
 <b>500K+</b>
-
 <span>Foydalanuvchi</span>
-
 </div>
 
 <div>
-
 <b>4.9★</b>
-
 <span>Reyting</span>
-
 </div>
 
 <div>
-
 <b>24/7</b>
-
-<span>Xizmat</span>
-
+<span>Faol</span>
 </div>
 
 </div>
 
 <div class="badges">
 
-<span>🥬 Yangi mahsulotlar</span>
-<span>🚚 Tez yetkazish</span>
-<span>💳 Qulay to'lov</span>
+<span>🥦 Yangi mahsulotlar</span>
+<span>🎁 Bonuslar</span>
+<span>🚚 Tez xizmat</span>
 
 </div>
 
 <div class="banner">
 
-<h3>🎁 Maxsus taklif</h3>
+<h3>🎁 Maxsus bonus</h3>
 
 <p>
-Yangi foydalanuvchilar uchun chegirmalar va bonuslar mavjud
+Yangi foydalanuvchilar uchun chegirmalar va takliflar
 </p>
 
 </div>
@@ -267,51 +274,71 @@ Yangi foydalanuvchilar uchun chegirmalar va bonuslar mavjud
 <a class="download"
 href="https://github.com/KIQrst11/Persex-app/releases/download/v1.0/PerSex.Online.apk">
 
-⬇ Ilovani yuklab olish
+⬇ Yuklab olish
 
 </a>
 
-<div class="features">
-
-<div class="item">
-
-🥦 Yangi mahsulotlar
-
-</div>
-
-<div class="item">
-
-🛒 Oson buyurtma
-
-</div>
-
-<div class="item">
-
-🚚 Tez yetkazish
-
-</div>
-
-<div class="item">
-
-💳 Qulay to'lov
-
-</div>
-
-</div>
-
-<div style="margin-top:20px;font-weight:bold">
-
+<h3 style="margin-top:25px">
 Ilova skrinshotlari
-
-</div>
+</h3>
 
 <div class="gallery">
 
-<img src="assets/img1.png" onclick="openImg(this.src)">
-<img src="assets/img2.png" onclick="openImg(this.src)">
-<img src="assets/img3.png" onclick="openImg(this.src)">
+<img src="assets/img1.png"
+onclick="openImg(this.src)">
+
+<img src="assets/img2.png"
+onclick="openImg(this.src)">
+
+<img src="assets/img3.png"
+onclick="openImg(this.src)">
 
 </div>
+
+<h3 style="margin-top:25px">
+Fikrlar
+</h3>
+
+<div class="review">
+★★★★★ Juda qulay foydalanish
+</div>
+
+<div class="review">
+★★★★★ Tez ishlaydi
+</div>
+
+<div class="review">
+★★★★★ Interfeys juda yoqdi
+</div>
+
+<h3 style="margin-top:25px">
+FAQ
+</h3>
+
+<div class="faq" onclick="faq('a1')">
+Ilovani qanday o'rnataman?
+<div id="a1" class="answer">
+APK yuklab olib oching
+</div>
+</div>
+
+<div class="faq" onclick="faq('a2')">
+Android ishlaydimi?
+<div id="a2" class="answer">
+Ha, Android qo'llab-quvvatlanadi
+</div>
+</div>
+
+</div>
+
+<div class="fixed">
+
+<a class="download"
+href="https://github.com/KIQrst11/Persex-app/releases/download/v1.0/PerSex.Online.apk">
+
+⬇ Yuklab olish
+
+</a>
 
 </div>
 
